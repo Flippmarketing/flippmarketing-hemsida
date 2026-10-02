@@ -203,9 +203,9 @@ footer{background:var(--ink);color:rgba(248,245,239,.5);padding:40px 0;font-size
 .logos{padding:56px 0;background:#fff;border-bottom:1px solid var(--line)}
 .logos .wrap{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
 .logos .eyebrow{margin:0;flex:none}
-.logo-row{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;align-items:center}
+.logo-row{flex:1 1 520px;min-width:0;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;align-items:center}
 .logo-row img{height:44px;width:auto;max-width:100%;margin:0 auto;object-fit:contain}
-@media (max-width:760px){.logo-row{grid-template-columns:1fr 1fr;gap:30px 24px}.logo-row img{height:36px}}
+@media (max-width:760px){.logos{padding:44px 0}.logos .wrap{flex-direction:column;align-items:stretch;gap:28px}.logos .eyebrow{text-align:center}.logo-row{flex:none;width:100%;grid-template-columns:1fr 1fr;gap:32px 28px}.logo-row img{height:auto;width:100%;max-width:150px;max-height:52px}}
 
 /* FAQ */
 .faq-list{border-top:1px solid var(--line)}
