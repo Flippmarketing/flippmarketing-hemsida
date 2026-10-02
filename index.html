@@ -74,6 +74,7 @@ header.scrolled{background:rgba(19,18,16,.88);backdrop-filter:blur(14px);border-
 .nav ul a:hover{color:#fff}
 .nav ul .btn{color:var(--ink);padding:10px 18px;font-size:14px}
 .menu-btn{display:none;background:none;border:0;color:var(--cream);cursor:pointer}
+@media (max-width:1120px){.nav ul{gap:16px}.nav ul a{font-size:13px}.nav ul .btn{padding:9px 14px;font-size:13px}}
 .menu-btn svg{width:26px;height:26px}
 
 /* Hero */
@@ -208,6 +209,8 @@ select option{color:var(--ink)}
 input:focus,textarea:focus,select:focus{outline:none;border-color:var(--red)}
 textarea{min-height:110px;resize:vertical}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.two>*,form label{min-width:0}
+input,textarea{width:100%;min-width:0}
 form .btn{justify-content:center;width:100%;margin-top:8px}
 .form-msg{font-size:15px;text-align:center;display:none}
 
@@ -246,6 +249,8 @@ footer{background:var(--ink);color:rgba(248,245,239,.5);padding:40px 0;font-size
 .logos{padding:56px 0;background:#fff;border-bottom:1px solid var(--line)}
 .logos .wrap{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
 .logos .eyebrow{margin:0;flex:none}
+.case-link{display:block;margin-top:10px;color:var(--red);text-decoration:none;letter-spacing:.12em}
+.case-link:hover{color:var(--red-d)}
 .logo-row{flex:1 1 520px;min-width:0;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;align-items:center}
 .logo-row img{height:44px;width:auto;max-width:100%;margin:0 auto;object-fit:contain}
 @media (max-width:760px){.logos{padding:44px 0}.logos .wrap{flex-direction:column;align-items:stretch;gap:28px}.logos .eyebrow{text-align:center}.logo-row{flex:none;width:100%;grid-template-columns:1fr 1fr;gap:32px 28px}.logo-row img{height:auto;width:100%;max-width:150px;max-height:52px}}
@@ -275,6 +280,7 @@ footer{background:var(--ink);color:rgba(248,245,239,.5);padding:40px 0;font-size
       <li><a href="#priser">Priser</a></li>
       <li><a href="#berakna">Prisberäknare</a></li>
       <li><a href="#projekt">Projekt</a></li>
+      <li><a href="/case/">Case</a></li>
       <li><a href="#om-mig">Om oss</a></li>
       <li><a href="#kontakt" class="btn btn-cream">Boka ett samtal</a></li>
     </ul>
@@ -300,7 +306,7 @@ footer{background:var(--ink);color:rgba(248,245,239,.5);padding:40px 0;font-size
 <!-- LOGOS -->
 <section class="logos" aria-label="Kunder">
   <div class="wrap">
-    <div class="eyebrow">Stolta samarbeten med</div>
+    <div class="eyebrow">Stolta samarbeten med<a class="case-link" href="/case/">Läs våra case →</a></div>
     <div class="logo-row">
       <img src="assets/logo-jondetech.png" alt="JonDeTech" loading="lazy" width="373" height="106">
       <img src="assets/logo-vimab.png" alt="Vimab Group" loading="lazy" width="364" height="122">
@@ -557,7 +563,7 @@ footer{background:var(--ink);color:rgba(248,245,239,.5);padding:40px 0;font-size
 <footer>
   <div class="wrap foot">
     <div><strong style="color:#fff">Flipp Marketing</strong> – extern marknadschef för bolag och organisationer som vill växa.<br>© <span id="y"></span> Flipp Marketing AB · Org.nr 559426-3484</div>
-    <nav><a href="#tjanster">Tjänster</a><a href="#priser">Priser</a><a href="#berakna">Prisberäknare</a><a href="#projekt">Projekt</a><a href="#om-mig">Om oss</a><a href="#kontakt">Kontakt</a></nav>
+    <nav><a href="#tjanster">Tjänster</a><a href="#priser">Priser</a><a href="#berakna">Prisberäknare</a><a href="#projekt">Projekt</a><a href="/case/">Case</a><a href="#om-mig">Om oss</a><a href="#kontakt">Kontakt</a></nav>
   </div>
 </footer>
 
