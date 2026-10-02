@@ -127,6 +127,46 @@ select{max-width:100%}
 .plan.feature .btn{background:var(--ink);color:var(--cream)}
 .fine{margin-top:30px;color:rgba(248,245,239,.5);font-size:13px}
 
+/* Calculator */
+.calc{background:var(--cream)}
+.calc-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:40px;margin-top:56px;align-items:start}
+.step{margin-bottom:40px}
+.step h3{display:flex;gap:12px;align-items:baseline;margin-bottom:6px}
+.step h3 span{color:var(--red);font-size:13px;font-weight:700}
+.step>p{color:var(--muted);font-size:15px;margin-bottom:18px}
+.areas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{position:relative;display:block;cursor:pointer}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .box{display:block;height:100%;background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px 16px 48px;transition:border-color .2s,background .2s;position:relative}
+.opt .box::before{content:"";position:absolute;left:18px;top:19px;width:18px;height:18px;border:1.5px solid #C9C5BD;border-radius:4px;background:#fff;transition:all .2s}
+.opt input[type=radio]+.box::before{border-radius:50%}
+.opt input:checked+.box{border-color:var(--ink);background:#fff}
+.opt input:checked+.box::before{background:var(--red);border-color:var(--red);box-shadow:inset 0 0 0 3px #fff}
+.opt input:focus-visible+.box{outline:2px solid var(--red);outline-offset:2px}
+.opt b{display:block;font-weight:600;font-size:15.5px;color:var(--ink)}
+.opt small{display:block;color:var(--muted);font-size:13.5px;line-height:1.45;margin-top:3px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.seg.four{grid-template-columns:repeat(4,1fr)}
+.seg .box{padding:14px 14px 14px 44px}
+.seg .box::before{left:16px;top:17px}
+.result{position:sticky;top:96px;background:var(--ink);color:var(--cream);border-radius:6px;padding:34px 32px}
+.result .eyebrow{color:rgba(248,245,239,.55);margin-bottom:10px}
+.r-price{font-weight:700;font-size:clamp(30px,3.4vw,40px);letter-spacing:-.035em;line-height:1.1}
+.r-unit{color:rgba(248,245,239,.6);font-size:14px;margin-top:6px}
+.r-note{margin-top:22px;padding-top:20px;border-top:1px solid rgba(248,245,239,.12);font-size:15px;color:rgba(248,245,239,.8)}
+.r-note b{color:var(--cream);font-weight:600}
+.r-list{list-style:none;margin-top:12px;display:grid;gap:6px;font-size:14px;color:rgba(248,245,239,.65)}
+.r-list li::before{content:"→ ";color:var(--red);font-weight:600}
+.result form{background:transparent;border:0;padding:0;margin-top:24px;gap:14px}
+.result form[hidden]{display:none}
+.r-empty{color:rgba(248,245,239,.6);font-size:15px;margin-top:8px}
+.r-fine{font-size:12px;color:rgba(248,245,239,.45);margin-top:14px}
+.calc-link{margin-top:30px;font-size:15px;color:rgba(248,245,239,.7)}
+.calc-link a{color:var(--cream);font-weight:600;text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:2px}
+@media (max-width:980px){.calc-grid{grid-template-columns:1fr}.result{position:static}}
+@media (max-width:760px){.areas,.seg.four{grid-template-columns:1fr 1fr}.seg{grid-template-columns:1fr}.result{padding:28px 22px}}
+@media (max-width:420px){.areas{grid-template-columns:1fr}}
+
 /* Projects */
 .projects{background:var(--grey)}
 .projects .grid3{background:var(--line)}
@@ -230,6 +270,7 @@ footer{background:var(--ink);color:rgba(248,245,239,.5);padding:40px 0;font-size
     <ul>
       <li><a href="#tjanster">Tjänster</a></li>
       <li><a href="#priser">Priser</a></li>
+      <li><a href="#berakna">Prisberäknare</a></li>
       <li><a href="#projekt">Projekt</a></li>
       <li><a href="#om-mig">Om oss</a></li>
       <li><a href="#kontakt" class="btn btn-cream">Boka ett samtal</a></li>
@@ -342,6 +383,75 @@ footer{background:var(--ink);color:rgba(248,245,239,.5);padding:40px 0;font-size
         <a href="#kontakt" class="btn">Boka en analys</a>
       </article>
     </div>
+    <p class="calc-link reveal">Osäker på vad ni behöver? <a href="#berakna">Räkna fram ett ungefärligt pris →</a></p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc" id="berakna">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div><div class="eyebrow">Prisberäknare</div><h2>Vad skulle det<br>kosta för er?</h2></div>
+      <p class="lead">Välj vad ni behöver hjälp med, hur mycket och hur länge – så får ni ett ungefärligt pris direkt. Skicka sedan förfrågan så återkommer vi med ett skräddarsytt förslag.</p>
+    </div>
+    <div class="calc-grid">
+      <div class="reveal" id="calc-steps">
+        <div class="step">
+          <h3><span>01</span>Vad behöver ni hjälp med?</h3>
+          <p>Välj ett eller flera områden.</p>
+          <div class="areas">
+          <label class="opt"><input type="checkbox" name="omrade" value="strategi"><span class="box"><b>Strategi och marknadsplan</b><small>Mål, målgrupper, prioriteringar och plan</small></span></label>
+          <label class="opt"><input type="checkbox" name="omrade" value="projektledning"><span class="box"><b>Projektledning</b><small>Styrning av byråer, leverantörer och tidplaner</small></span></label>
+          <label class="opt"><input type="checkbox" name="omrade" value="annonsering"><span class="box"><b>Annonsering</b><small>Kampanjer i Meta och Google som säljer</small></span></label>
+          <label class="opt"><input type="checkbox" name="omrade" value="hemsida"><span class="box"><b>Hemsida, SEO och GEO</b><small>Synas i Google och i AI-sök</small></span></label>
+          <label class="opt"><input type="checkbox" name="omrade" value="design"><span class="box"><b>Design och material</b><small>Annonser, trycksaker och visuell profil</small></span></label>
+          <label class="opt"><input type="checkbox" name="omrade" value="innehall"><span class="box"><b>Innehåll och nyhetsbrev</b><small>Texter, artiklar och utskick</small></span></label>
+          <label class="opt"><input type="checkbox" name="omrade" value="rapporter"><span class="box"><b>Rapporter och presentationer</b><small>Snygga underlag till ledning, styrelse och kunder</small></span></label>
+          <label class="opt"><input type="checkbox" name="omrade" value="sociala"><span class="box"><b>Sociala medier</b><small>Planering och innehåll i era kanaler</small></span></label>
+          <label class="opt"><input type="checkbox" name="omrade" value="fri"><span class="box"><b>Fri konsultation</b><small>Vet inte exakt vad ni behöver? Vi hittar rätt fokus tillsammans</small></span></label>
+          </div>
+        </div>
+        <div class="step">
+          <h3><span>02</span>Hur mycket hjälp?</h3>
+          <p>Hur stor del av arbetet vill ni att vi tar?</p>
+          <div class="seg">
+            <label class="opt"><input type="radio" name="niva" value="0.7"><span class="box"><b>Lite stöttning</b><small>Bollplank och styrning</small></span></label>
+            <label class="opt"><input type="radio" name="niva" value="1" checked><span class="box"><b>Normalt</b><small>Vi gör en stor del</small></span></label>
+            <label class="opt"><input type="radio" name="niva" value="1.5"><span class="box"><b>Ta det helt</b><small>Vi äger området</small></span></label>
+          </div>
+        </div>
+        <div class="step" style="margin-bottom:0">
+          <h3><span>03</span>Hur länge?</h3>
+          <p>Längre samarbeten ger lägre månadspris.</p>
+          <div class="seg four">
+            <label class="opt"><input type="radio" name="langd" value="projekt"><span class="box"><b>Projekt</b><small>Engångsinsats</small></span></label>
+            <label class="opt"><input type="radio" name="langd" value="3" checked><span class="box"><b>3 mån</b><small>Ordinarie pris</small></span></label>
+            <label class="opt"><input type="radio" name="langd" value="6"><span class="box"><b>6 mån</b><small>5 % rabatt</small></span></label>
+            <label class="opt"><input type="radio" name="langd" value="lopande"><span class="box"><b>Löpande</b><small>10 % rabatt</small></span></label>
+          </div>
+        </div>
+      </div>
+      <aside class="result reveal" aria-live="polite">
+        <div class="eyebrow">Ert uppskattade pris</div>
+        <div id="r-out" hidden>
+          <div class="r-price" id="r-price"></div>
+          <div class="r-unit" id="r-unit"></div>
+          <div class="r-note" id="r-note"></div>
+          <ul class="r-list" id="r-list"></ul>
+        </div>
+        <p class="r-empty" id="r-empty">Välj minst ett område så räknar vi fram ett ungefärligt pris.</p>
+        <form id="calc-form" action="https://formspree.io/f/DITT_FORMULAR_ID" method="POST" hidden>
+          <input type="hidden" name="_subject" value="Prisförfrågan via beräknaren">
+          <input type="hidden" name="berakning" id="calc-summary">
+          <label>Namn<input name="namn" required autocomplete="name"></label>
+          <label>E-post<input type="email" name="email" required autocomplete="email"></label>
+          <label>Företag<input name="foretag" autocomplete="organization"></label>
+          <button type="submit" class="btn btn-red">Skicka förfrågan</button>
+          <p class="form-msg" id="calc-msg"></p>
+        </form>
+        <p class="r-fine">Uppskattningen är vägledande och exkl. moms. Det slutliga priset sätter vi tillsammans efter ett första samtal.</p>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -445,7 +555,7 @@ footer{background:var(--ink);color:rgba(248,245,239,.5);padding:40px 0;font-size
 <footer>
   <div class="wrap foot">
     <div><strong style="color:#fff">Flipp Marketing</strong> – extern marknadschef för bolag och organisationer som vill växa.<br>© <span id="y"></span> Flipp Marketing AB · Org.nr 559426-3484</div>
-    <nav><a href="#tjanster">Tjänster</a><a href="#priser">Priser</a><a href="#projekt">Projekt</a><a href="#om-mig">Om oss</a><a href="#kontakt">Kontakt</a></nav>
+    <nav><a href="#tjanster">Tjänster</a><a href="#priser">Priser</a><a href="#berakna">Prisberäknare</a><a href="#projekt">Projekt</a><a href="#om-mig">Om oss</a><a href="#kontakt">Kontakt</a></nav>
   </div>
 </footer>
 
@@ -469,6 +579,54 @@ form.addEventListener('submit',async e=>{
     msg.style.display='block';msg.textContent=r.ok?'Tack! Vi återkommer inom 24 timmar.':'Något gick fel – mejla gärna filippa@flippmarketing.se';
     if(r.ok)form.reset();}catch{msg.style.display='block';msg.textContent='Något gick fel – mejla gärna filippa@flippmarketing.se';}
 });
+// Prisberäknare
+(()=>{
+const H={strategi:6,projektledning:4,annonsering:6,hemsida:4,design:5,innehall:4,rapporter:3,sociala:4,fri:8};
+const P={strategi:10000,projektledning:8000,annonsering:15000,hemsida:15000,design:12000,innehall:8000,rapporter:6000,sociala:8000,fri:9500};
+const RATE=1000,FLOOR=15000,DISC={'3':0,'6':.05,'lopande':.10};
+const LEN={'projekt':'Projekt (engångsinsats)','3':'3 månader','6':'6 månader','lopande':'Löpande'};
+const LVL={'0.7':'Lite stöttning','1':'Normalt','1.5':'Ta det helt'};
+const steps=document.getElementById('calc-steps'),out=document.getElementById('r-out'),empty=document.getElementById('r-empty'),cf=document.getElementById('calc-form');
+const r500=n=>Math.round(n/500)*500, kr=n=>n.toLocaleString('sv-SE').replace(/[\u00a0\u202f,]/g,' ');
+function calc(){
+  const sel=[...steps.querySelectorAll('input[name=omrade]:checked')];
+  const lvl=steps.querySelector('input[name=niva]:checked').value, len=steps.querySelector('input[name=langd]:checked').value;
+  if(!sel.length){out.hidden=true;cf.hidden=true;empty.hidden=false;return}
+  out.hidden=false;cf.hidden=false;empty.hidden=true;
+  const keys=sel.map(i=>i.value), names=sel.map(i=>i.parentElement.querySelector('b').textContent), m=+lvl;
+  let lo,hi,unit,note;
+  if(len==='projekt'){
+    const base=keys.reduce((a,k)=>a+P[k],0)*m;
+    lo=Math.max(7500,r500(base*.9));hi=Math.max(lo+2500,r500(base*1.2));
+    unit='engångskostnad exkl. moms';
+    note='<b>Ja, det här kan vi hjälpa er med.</b> Ett avgränsat projekt med fast pris – ni vet vad ni får och vad det kostar.';
+  }else{
+    const d=DISC[len], full=keys.reduce((a,k)=>a+H[k],0)*m*RATE, mid=full*(1-d);
+    const plus=(lvl==='1.5'&&keys.length>1)||mid>=30000, fl=plus?35000:FLOOR;
+    const range=x=>{const l=Math.max(fl,r500(x*.9));return [l,Math.max(l+3000,r500(x*1.15))]};
+    [lo,hi]=range(mid);const fullHi=range(full)[1];
+    unit='per månad exkl. moms'+(d&&hi<fullHi?` · inkl. ${d*100} % rabatt`:'');
+    const lvlTxt=plus?'Det motsvarar ungefär vårt <b>Plus</b>-upplägg, där vi både leder och genomför.':'Det motsvarar ungefär vårt <b>Bas</b>-upplägg, med möjlighet att lägga till mer vid behov.';
+    note='<b>Ja, det här kan vi hjälpa er med.</b> '+lvlTxt;
+  }
+  document.getElementById('r-price').textContent=kr(lo)+' – '+kr(hi)+' kr';
+  document.getElementById('r-unit').textContent=unit;
+  document.getElementById('r-note').innerHTML=note;
+  document.getElementById('r-list').innerHTML=names.map(n=>'<li>'+n+'</li>').join('')+'<li>'+LVL[lvl]+' · '+LEN[len]+'</li>';
+  document.getElementById('calc-summary').value=`Områden: ${names.join(', ')}\nNivå: ${LVL[lvl]}\nLängd: ${LEN[len]}\nUppskattat pris: ${kr(lo)}–${kr(hi)} kr ${unit}`;
+}
+steps.addEventListener('change',calc);calc();
+const cm=document.getElementById('calc-msg');
+cf.addEventListener('submit',async e=>{
+  e.preventDefault();const d=new FormData(cf);
+  if(cf.action.includes('DITT_FORMULAR_ID')){
+    const body=encodeURIComponent(`Namn: ${d.get('namn')}\nE-post: ${d.get('email')}\nFöretag: ${d.get('foretag')}\n\n${d.get('berakning')}`);
+    location.href=`mailto:filippa@flippmarketing.se?subject=${encodeURIComponent('Prisförfrågan via hemsidan')}&body=${body}`;return;}
+  try{const r=await fetch(cf.action,{method:'POST',body:d,headers:{Accept:'application/json'}});
+    cm.style.display='block';cm.textContent=r.ok?'Tack! Vi återkommer inom 24 timmar med ett förslag.':'Något gick fel – mejla gärna filippa@flippmarketing.se';
+    if(r.ok){cf.querySelectorAll('input:not([type=hidden])').forEach(i=>i.value='')}}catch{cm.style.display='block';cm.textContent='Något gick fel – mejla gärna filippa@flippmarketing.se';}
+});
+})();
 </script>
 </body>
 </html>
