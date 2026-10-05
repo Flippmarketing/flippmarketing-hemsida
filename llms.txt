@@ -1,23 +1,21 @@
 # Flipp Marketing
 
-> Flipp Marketing (Flipp Marketing AB, org.nr 559426-3484) är en svensk marknadsföringskonsult som erbjuder extern marknadschef på deltid – strategi, design och genomförande i samma person – för bolag och organisationer som är redo för en marknadschef men inte för en heltidsanställning. Grundare: Filippa. Kontakt: filippa@flippmarketing.se. Webb: https://flippmarketing.se/
+> Flipp Marketing (Flipp Marketing AB, org.nr 559426-3484) är en svensk marknadsföringsbyrå som fungerar som en flexibel marknadsavdelning för små och medelstora bolag – strategi, design, annonsering och hemsida, från enstaka projekt till löpande ansvar. Grundare: Filippa. Kontakt: filippa@flippmarketing.se. Webb: https://flippmarketing.se/
 
-## Tjänster
+## Upplägg (exkl. moms)
 
-- Extern marknadschef – Bas: från 15 000 kr/mån exkl. moms. Strategi, prioriteringar, styrning av byråer och leverantörer, löpande uppföljning.
-- Extern marknadschef – Plus: från 35 000 kr/mån exkl. moms. Allt i Bas plus genomförande: annonser, hemsida, design, rapporter och presentationer.
-
-## Kom igång (fast pris)
-
-- AI-synlighetsanalys (GEO): 7 500 kr – hur bolaget syns i ChatGPT, Gemini och Perplexity jämfört med konkurrenter.
-- Marknadsgenomlysning: 9 500 kr – hemsida, annonser, analys och design med prioriterad åtgärdsplan.
+- Projekt: fast pris från 6 500 kr – avgränsade insatser som analyser, marknadsplan, annonsuppstart och hemsida.
+- Löpande hjälp: från 15 000 kr/mån – kontinuerlig hjälp inom de områden kunden väljer, t.ex. annonsering, innehåll, design och SEO.
+- Extern marknadschef: från 35 000 kr/mån – helhetsansvar för marknadsföringen: strategi, styrning av byråer och leverantörer, genomförande och rapportering.
 
 ## Projekt med fast pris (exkl. moms)
 
+- Marknadsgenomlysning med åtgärdsplan: 6 500 kr
 - Marknadsplan 6–12 månader: 10 000 kr
+- AI-synlighetsanalys (GEO): 7 500 kr
+- GEO-implementering: 15 000 kr
 - Annonsuppstart Meta + Google: 15 000 kr
 - Konverteringslyft för Shopify: 15 000 kr
-- GEO-implementering: 15 000 kr
 - Landningssida: från 18 000 kr; ny hemsida (WordPress eller Shopify): från 40 000 kr
 - Visuellt lyft: från 12 000 kr
 
@@ -25,9 +23,9 @@
 
 Marknadsstrategi, projektledning, Meta- och Google-annonsering, hemsidor, SEO, GEO (Generative Engine Optimization / AI-sök), Shopify och konverteringsoptimering, grafisk design av annonser, presentationer, säljmaterial och rapporter, AI-verktyg i marknadsarbetet.
 
-## Erfarenhet
+## Erfarenhet och case
 
-Börsnoterade bolag, tech och fintech, idrottsföreningar, restauranger, organisationer och varumärken. Samarbeten bland annat med JonDeTech, Vimab Group, Pro Rata och NubOps.
+B2B och B2C: börsnoterade bolag, tech och fintech, e-handel, idrottsföreningar, restauranger, organisationer och varumärken. Samarbeten bland annat med JonDeTech, Vimab Group, Pro Rata, Nubis Operandis (NubOps) och Dose Athletic. Case: https://flippmarketing.se/case/
 
 ## Kontakt
 
