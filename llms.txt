@@ -11,7 +11,7 @@
 ## Projekt
 
 - Digitalisering × AI: AI-synlighetskollen (kostnadsfri), AI-redo hemsida
-- Designöversikt och optimering: Designkollen (kostnadsfri), Snabblyft
+- Designöversikt och optimering: Designkollen (kostnadsfri), Varumärkeslyft
 - Rapporter (i samarbete med Pro Rata): Rapportdesign, mall för kommande rapporter (kostnadsfri)
 - Marknadsgenomlysning: Genomlysning (kostnadsfri), Marknadsplan och genomförande
 
