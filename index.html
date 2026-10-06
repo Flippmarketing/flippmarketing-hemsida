@@ -101,8 +101,10 @@ select{max-width:100%}
 .pain-item p{font-size:18px;letter-spacing:-.01em}
 .pain-note{margin-top:22px;font-size:18px;color:var(--muted)}
 .pain-note strong{color:var(--ink)}
-.pain-fig{display:block;width:160px;max-width:70%;height:auto;margin:32px 0 0 64px;color:var(--red);transform-origin:50% 100%;animation:sway 6s ease-in-out infinite}
-.faq-fig{color:var(--ink);margin-top:80px}
+.pain-fig{display:block;width:160px;max-width:70%;height:auto;margin:32px auto 0;color:var(--red);transform-origin:50% 100%;animation:sway 6s ease-in-out infinite}
+.faq-fig{color:var(--ink);margin:80px 0 0 64px}
+@media (min-width:981px){.pain{overflow:hidden}.pain .split{align-items:stretch}.pain .split>.reveal:first-child{display:flex;flex-direction:column}.pain .pain-fig{width:250px;margin:40px 0 -130px 110px;margin-top:auto}}
+@media (min-width:981px){.faq{overflow:hidden}.faq .split{align-items:stretch}.faq .split>.reveal:first-child{display:flex;flex-direction:column}.faq .faq-fig{width:250px;margin:40px 0 -160px 110px;margin-top:auto}}
 @keyframes sway{0%,100%{transform:rotate(0)}50%{transform:rotate(-3deg)}}
 @media (max-width:980px){.pain-fig{width:150px;margin:28px auto 0}}
 @media (prefers-reduced-motion:reduce){.pain-fig{animation:none}}
