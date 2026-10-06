@@ -89,6 +89,12 @@ header.scrolled{background:rgba(19,18,16,.88);backdrop-filter:blur(14px);border-
 .trust{margin-top:90px;padding-top:24px;border-top:1px solid rgba(248,245,239,.12);display:flex;flex-wrap:wrap;align-items:center;gap:12px 34px;color:rgba(248,245,239,.5);font-size:13px}
 .trust .t-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
 .trust b{color:rgba(248,245,239,.85);font-weight:600;font-size:15px;letter-spacing:-.01em}
+.trust{position:relative}
+.peek{position:absolute;bottom:calc(100% + 1px);left:0;width:46px;height:70px;overflow:hidden;pointer-events:none}
+.peek-fig{position:absolute;left:0;bottom:-4px;width:46px;height:auto;color:#F8F5EF;transform:translateY(105%);animation:peek 10s ease-in-out infinite}
+@keyframes peek{0%,8%{transform:translateY(105%)}16%{transform:translateY(0) rotate(0)}22%{transform:translateY(0) rotate(-4deg)}28%{transform:translateY(0) rotate(4deg)}34%,44%{transform:translateY(0) rotate(0)}52%,100%{transform:translateY(105%)}}
+@media (prefers-reduced-motion:reduce){.peek-fig{animation:none;transform:none}}
+@media (max-width:759px){.peek{display:none}}
 
 /* Pain */
 .pain{background:var(--grey);padding-bottom:90px}
@@ -328,7 +334,7 @@ footer{background:var(--ink);color:rgba(248,245,239,.5);padding:40px 0;font-size
       <a href="#kontakt" class="btn btn-cream">Boka ett samtal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="#priser" class="btn btn-line">Så kan vi jobba ihop</a>
     </div>
-    <div class="trust"><span class="t-label">Erfarenhet</span><b>B2B &amp; B2C</b><b>Börsnoterade bolag</b><b>Tech &amp; fintech</b><b>Idrottsföreningar</b><b>Restauranger</b><b>Organisationer</b><b>Varumärken</b></div>
+    <div class="trust"><span class="t-label">Erfarenhet</span><b>B2B &amp; B2C</b><b>Börsnoterade bolag</b><b>Tech &amp; fintech</b><b>Idrottsföreningar</b><b>Restauranger</b><b>Organisationer</b><b>Varumärken</b><span class="peek" aria-hidden="true"><svg class="peek-fig" viewBox="0 0 665 965" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M56 964C51 963 46 954 38 929C11 848 -1 743 0 602C1 529 2 512 10 456C28 325 59 225 99 166C136 113 151 96 184 69C246 18 350 -10 427 4C467 11 520 40 552 73C591 112 604 142 597 175C592 200 575 216 538 232L526 237L526 241C526 243 525 253 525 264C524 274 523 292 523 304C521 342 520 378 517 440C515 473 514 506 513 513L513 526L523 538C528 546 538 561 546 572C554 584 560 594 561 594C561 595 565 586 567 578C569 574 572 558 575 543C583 501 587 477 596 436L603 398L601 395C599 393 598 391 597 389C597 387 593 379 589 371C581 355 581 352 584 347C590 337 601 339 607 351L610 358L615 357C624 356 641 356 644 359C648 362 650 365 651 370C651 373 652 374 653 375C659 376 664 384 664 392C664 397 662 401 657 406C653 409 653 410 654 414C656 421 653 429 646 434C642 437 627 442 622 442C619 442 619 442 618 447C616 457 604 520 599 546C593 579 591 588 584 601C576 618 568 624 555 620C548 618 542 611 527 587C514 568 512 566 512 568C511 577 513 684 514 704C519 769 526 811 537 854C540 866 540 869 539 872C536 880 526 883 520 877C517 874 516 872 512 854C493 779 486 695 488 575C488 542 488 533 487 532C486 529 486 522 487 519C489 518 489 512 490 495C491 483 492 461 492 445C495 398 497 352 498 314C499 294 500 270 500 262C501 253 502 245 502 245C501 245 495 247 488 249C443 260 390 269 317 276C289 279 283 280 279 277C270 273 272 259 281 256C283 256 291 255 298 254C437 242 532 220 561 193C573 182 578 163 573 145C563 111 519 68 470 44C433 26 399 21 354 26C258 39 189 80 136 156C132 162 126 171 123 176C103 203 83 246 68 296C45 372 25 495 25 566L25 573L28 573C34 573 36 575 66 615C81 635 94 652 95 652C98 652 103 638 116 596C123 572 138 525 149 492L153 480L152 464C151 443 151 442 140 420C132 401 131 398 136 392C139 390 141 389 144 389C152 389 154 391 162 410C166 417 169 423 170 423C170 423 174 422 179 420C202 412 220 419 219 435C218 441 218 441 221 442C230 445 235 455 231 463C229 467 222 472 217 475C213 477 213 477 213 482C213 488 210 493 204 496C198 499 185 502 177 502L170 503L164 522C152 559 141 596 134 618C121 664 112 677 95 677C83 677 81 675 49 632L24 600L24 622C24 647 26 704 28 733C33 817 45 880 66 935L72 952L71 957C68 963 63 966 56 964ZM335 148C330 145 329 142 326 126C323 113 323 112 324 109C328 100 342 99 346 108C347 111 352 133 352 137C352 141 348 146 345 148C340 149 339 149 335 148ZM440 133C434 127 429 100 433 94C437 87 449 88 453 95C455 98 459 120 459 125C459 135 447 140 440 133Z"/></svg></span></div>
   </div>
 </section>
 
@@ -542,5 +548,6 @@ form.addEventListener('submit',async e=>{
     if(r.ok)form.reset();}catch{msg.style.display='block';msg.textContent='Något gick fel – mejla gärna filippa@flippmarketing.se';}
 });
 </script>
+<script>(function(){var t=document.querySelector('.trust'),p=t&&t.querySelector('.peek');if(!p)return;var bs=t.querySelectorAll('b'),b=bs[bs.length-1];function pos(){p.style.left=(b.offsetLeft+b.offsetWidth/2-23)+'px'}pos();window.addEventListener('resize',pos);if(document.fonts)document.fonts.ready.then(pos)})();</script>
 </body>
 </html>
